@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>This is a Test!</title>
+	<title>Seven Cards</title>
 
 	<link rel="stylesheet" href="main.css">
 
 </head>
 <body>
-	 <div class="card">
+
+	 <div class="card hidden">
 	 	<div class="value">
 	 		5
 	 	</div>
@@ -20,5 +21,69 @@
 	 	</div>
 
 	 </div>
+
+	 <script>
+	 	var sorted = [];
+
+	 	for(var i = 0; i < 4; i++)
+	 	{
+	 		for(var j = 1; j <= 13; j++)
+	 		{
+	 			var card = {
+	 				suit:i,
+	 				value:j
+	 			}
+	 			sorted.push(card)
+	 		}
+	 	}
+
+	 	for(var i = 0; i<sorted.length; i++){
+	 		console.log(sorted[i]);
+	 	}
+
+	 	for(var i = 0; i<sorted.length; i++){
+	 		var output = "";
+	 		var first = "<div class='card'><div class='value'>";
+	 		var middle1 = "</div><div class='suit "
+
+	 		var middle2= "'></div><div class='rotatedValue'>";
+	 		var end = "</div></div>";
+
+	 		var value = sorted[i].value;
+	 		var suit = sorted[i].suit;
+	 		var suitString = "";
+	 		if(suit == 0){
+	 			suitString = "heart";
+	 		}
+	 		else if(suit == 1){
+	 			suitString = "spade";
+	 		}
+	 		else if(suit == 2){
+	 			suitString = "club";
+	 		}
+	 		else{
+	 			suitString = "diamond"
+	 		}
+	 		if(value == 11){
+	 			value = "J"
+	 		}
+	 		else if(value == 12){
+	 			value = "Q"
+	 		}
+	 		else if(value == 13){
+	 			value = "K" 
+	 		}
+	 		else if(value == 1){
+	 			value = "A"
+	 		}
+	 		output = first + value + middle1 + suitString + middle2 + value + end;
+
+	 		document.getElementsByTagName('body')[0].innerHTML += output;
+	 	
+	 	}
+
+	 </script>
+
+
 </body>
 </html>

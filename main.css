@@ -3,6 +3,7 @@
 	height: 320px;
 	border-radius: 7px;
 	border: solid 2px #34495e;
+	margin-bottom: 20px;
 }
 .value{
 	padding-left: 20px;
@@ -15,12 +16,38 @@
 	margin-right: auto;
 	width: 135px;
 	height: 180px;
-	background-color: #c0392b;
 }
+
+.heart{
+	background-image: url("img/heart.png");
+	background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.spade{
+	background-image: url("img/spade.png");
+	background-repeat: no-repeat;
+    background-size: contain;
+}	
+.club{
+	background-image: url("img/club.png");
+	background-repeat: no-repeat;
+    background-size: contain;
+}
+.diamond{
+	background-image: url("img/diamond.png");
+	background-repeat: no-repeat;
+    background-size: contain;
+}
+
 .rotatedValue{
 	float:right;
 	height: 70px;
 	padding-right: 20px;
 	font-size: 48px;
 	line-height: 70px;
+}
+
+.hidden{
+	display:none;
 }
