@@ -23,7 +23,18 @@
 	 </div>
 
 	 <script>
-	 	var sorted = [];
+
+	 	function shuffle(input){
+	 		var shuffled = [];
+	 		for(var i = input.length;i>0; i--){
+	 			var randomIndex = Math.floor(Math.random()*i);
+	 			shuffled.push(input[randomIndex]);
+	 			input.splice(randomIndex,1);
+	 		}
+	 		return shuffled;
+	 	} 
+
+	 	var deck = [];
 
 	 	for(var i = 0; i < 4; i++)
 	 	{
@@ -33,15 +44,20 @@
 	 				suit:i,
 	 				value:j
 	 			}
-	 			sorted.push(card)
+	 			deck.push(card)
 	 		}
 	 	}
 
+	 	for(var i = 0; i<5; i++){
+	 		deck = shuffle(deck)
+	 	}
+
+	 	/*
 	 	for(var i = 0; i<sorted.length; i++){
 	 		console.log(sorted[i]);
 	 	}
-
-	 	for(var i = 0; i<sorted.length; i++){
+		*/
+	 	for(var i = 0; i<deck.length; i++){
 	 		var output = "";
 	 		var first = "<div class='card'><div class='value'>";
 	 		var middle1 = "</div><div class='suit "
@@ -49,8 +65,8 @@
 	 		var middle2= "'></div><div class='rotatedValue'>";
 	 		var end = "</div></div>";
 
-	 		var value = sorted[i].value;
-	 		var suit = sorted[i].suit;
+	 		var value = deck[i].value;
+	 		var suit = deck[i].suit;
 	 		var suitString = "";
 	 		if(suit == 0){
 	 			suitString = "heart";
@@ -79,8 +95,27 @@
 	 		output = first + value + middle1 + suitString + middle2 + value + end;
 
 	 		document.getElementsByTagName('body')[0].innerHTML += output;
-	 	
+
 	 	}
+
+	 	var allPlayers = [];
+
+	 	var NUM_PLAYERS = 6;
+
+
+	 	for(var i = 0; i < NUM_PLAYERS; i++){
+	 		var temp_player = {
+	 			playerId : i,
+	 			playerName : "",
+	 			hand : []
+	 		}
+	 		allPlayers.push(temp_player);
+	 	}
+	 	for(var i = 0; i < 52; i++){
+	 		var playerIndex = (i % NUM_PLAYERS);
+	 		allPlayers[playerIndex].hand.push(deck[i]);
+	 	}
+	 	console.log(allPlayers);
 
 	 </script>
 
