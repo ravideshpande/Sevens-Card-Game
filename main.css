@@ -30,7 +30,7 @@
     background-size: contain;
 }	
 .club{
-	background-image: url("img/club.png");
+	background-image: url( "img/club.png");
 	background-repeat: no-repeat;
     background-size: contain;
 }
@@ -51,10 +51,3 @@
 .hidden{
 	display:none;
 }
-.jack{
-
-}
-.queen{
-
-}
-.king
