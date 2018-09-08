@@ -18,8 +18,28 @@ var addPlayers = true;
 io.on('connection',function(socket){
 	console.log('made socket connection', socket.id);
 	if(addPlayers){
-		allPlayers.push(socket.id);
+		var tempPlayer = {
+			playerID:allPlayers.length,
+			connectionID:socket.id,
+			playerName:"",
+		}
+		allPlayers.push(tempPlayer);
 	}
+
+	socket.on('name', function(data){
+		for(var i = 0; i<allPlayers.length;i++){
+			if(allPlayers[i].connectionID == socket.id){
+				allPlayers[i].playerName = data.name;
+			}
+		}
+		var playerNames = [];
+		for(var i =0; i<allPlayers.length;i++){
+			if(allPlayers[i].playerName!=""){
+				playerNames.push(allPlayers[i].playerName);
+			}
+		}
+		io.sockets.emit('listPlayers', {names:playerNames});
+	});
 
 	socket.on('start', function(data){
 		if(data.status && addPlayers){
