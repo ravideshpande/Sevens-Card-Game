@@ -1,0 +1,23 @@
+{
+  "name": "sevens-card-game",
+  "version": "1.0.0",
+  "description": "HTML5 + Node.JS Card Game!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravideshpande/Sevens-Card-Game.git"
+  },
+  "author": "Ravi & Rohan Deshpande",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravideshpande/Sevens-Card-Game/issues"
+  },
+  "homepage": "https://github.com/ravideshpande/Sevens-Card-Game#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.1.1"
+  }
+}

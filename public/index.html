@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+</head>
+<body>
+<h1>Welcome to Seven Cards Game!</h1>
+	<div class="setName">
+		<input type="text" id="playerName" value="Enter Name...">
+		<button onclick="setName()">Enter</button>
+	</div>
+
+	<div class="gameRoom">
+		<ul id="gamePlayers"></ul>
+		<button type="button" onclick="startGame()">Start Game!</button>
+	</div>
+	<script src="/client-game.js"></script>
+</body>
+</html>
