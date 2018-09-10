@@ -2,19 +2,21 @@
 <html>
 <head>
 	<title>Game</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 </head>
 <body>
 <h1>Welcome to Seven Cards Game!</h1>
-	<div class="setName">
+	<div id="setName">
 		<input type="text" id="playerName" value="Enter Name...">
 		<button onclick="setName()">Enter</button>
 	</div>
 
-	<div class="gameRoom">
+	<div id="gameRoom">
 		<ul id="gamePlayers"></ul>
 		<button type="button" onclick="startGame()">Start Game!</button>
 	</div>
+	<div id="gameTable"></div>
 	<script src="/client-game.js"></script>
 </body>
 </html>

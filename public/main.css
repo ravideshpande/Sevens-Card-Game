@@ -51,3 +51,11 @@
 .hidden{
 	display:none;
 }
+
+#setName{
+	display: block;
+}
+
+#gameRoom{
+	display:none;
+}

@@ -2,10 +2,14 @@ var socket = io.connect("http://localhost:4000");
 
 function setName(){
 	var playerName = document.getElementById("playerName").value;
-	console.log(playerName);
-	socket.emit('name',{
-		name: playerName
-	});
+	if(playerName!="Enter Name..." && playerName!=""){
+		console.log(playerName);
+		socket.emit('name',{
+			name: playerName
+		});
+		document.getElementById("setName").style.display = "none";
+		document.getElementById("gameRoom").style.display = "block";
+	}
 }
 
 function startGame(){
