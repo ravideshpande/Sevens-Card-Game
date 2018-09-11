@@ -3,7 +3,8 @@
 	height: 320px;
 	border-radius: 7px;
 	border: solid 2px #34495e;
-	margin-bottom: 20px;
+	margin: 20px;
+	display: inline-block;
 }
 .value{
 	padding-left: 20px;
