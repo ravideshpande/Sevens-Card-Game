@@ -1,6 +1,6 @@
 .card{
-	width: 180px;
-	height: 240px;
+	width: 144px;
+	height: 192px;
 	border-radius: 7px;
 	border: solid 2px #34495e;
 	margin: 20px;
@@ -8,17 +8,17 @@
 	background-color: #FFF;
 }
 .value{
-	padding-left: 16px;
-	height: 52px;
+	padding-left: 13px;
+	height: 42px;
 	font-size:36px;
-	line-height: 52px;
+	line-height: 42px;
 	text-align: left;
 }
 .suit{
 	margin-left: auto;
 	margin-right: auto;
-	width: 101px;
-	height: 136px;
+	width: 81px;
+	height: 108px;
 }
 
 .heart{
@@ -45,10 +45,10 @@
 
 .rotatedValue{
 	float:right;
-	height: 52px;
-	padding-right: 16px;
+	height: 42px;
+	padding-right: 13px;
 	font-size: 36px;
-	line-height: 52px;
+	line-height: 42px;
 }
 
 .hidden{
@@ -66,7 +66,8 @@
 	position: fixed;
 	bottom: 0;
 	text-align: center;
-	height: 400px;
+	height: 250px;
 	overflow-y: scroll;
 	background-color: #27ae60;
+	border-top:solid 5px #bdc3c7;
 }

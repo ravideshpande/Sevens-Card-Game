@@ -34,7 +34,7 @@ socket.on('startHand',function(data){
 	deck = data;
 	for(var i = 0; i<deck.length;i++){
 		var output = "";
- 		var first = "<div class='card'><div class='value'>";
+ 		var first = "<div class='card' onclick='alertCard(this)'><div class='value'>";
  		var middle1 = "</div><div class='suit "
 
  		var middle2= "'></div><div class='rotatedValue'>";
@@ -72,3 +72,26 @@ socket.on('startHand',function(data){
  		document.getElementById("gameTable").innerHTML += output;
 	}
 });
+
+function alertCard(e){
+	console.log(e);
+	var value = e.getElementsByClassName('value')[0].textContent;
+	var suitName = e.getElementsByClassName('suit')[0].classList[1];
+	console.log(value);
+	var suit;
+	if(suitName == "heart"){
+ 		suit = 0;
+	}
+	else if(suitName == "spade"){
+		suit = 1;
+	}
+	else if(suitName == "club"){
+		suit = 2;
+	}
+	else{
+		suit = 3;
+	}
+	console.log(suit);
+
+	alert("Are you sure you wanted to play the: "+value+" of "+ suitName);
+}
