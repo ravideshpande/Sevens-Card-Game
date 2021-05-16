@@ -33,12 +33,6 @@ socket.on('startHand',function(data){
 	console.log(data);
 	deck = data;
 	for(var i = 0; i<deck.length;i++){
-		var output = "";
- 		var first = "<div class='card' onclick='alertCard(this)'><div class='value'>";
- 		var middle1 = "</div><div class='suit "
-
- 		var middle2= "'></div><div class='rotatedValue'>";
- 		var end = "</div></div>";
 
  		var value = deck[i].value;
  		var suit = deck[i].suit;
@@ -67,7 +61,7 @@ socket.on('startHand',function(data){
  		else if(value == 1){
  			value = "A"
  		}
- 		output = first + value + middle1 + suitString + middle2 + value + end;
+ 		output = `<div class='card' onclick='alertCard(this)'><div class='value'>${value}</div><div class='suit ${suitString}'></div><div class='rotatedValue'>${value}</div></div>`;
 
  		document.getElementById("gameTable").innerHTML += output;
 	}
