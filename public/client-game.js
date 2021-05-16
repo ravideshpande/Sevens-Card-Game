@@ -37,18 +37,8 @@ socket.on('startHand',function(data){
  		var value = deck[i].value;
  		var suit = deck[i].suit;
  		var suitString = "";
- 		if(suit == 0){
- 			suitString = "heart";
- 		}
- 		else if(suit == 1){
- 			suitString = "spade";
- 		}
- 		else if(suit == 2){
- 			suitString = "club";
- 		}
- 		else{
- 			suitString = "diamond"
- 		}
+		const suitsMap = ["heart", "spade", "club", "diamond"]; // arrays are kinda like hashmaps with numbers as keys
+ 		suitString = suitsMap[suit];
  		if(value == 11){
  			value = "J"
  		}
