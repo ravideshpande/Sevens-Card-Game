@@ -1,10 +1,13 @@
 var express = require('express');
-var socket = require('socket.io')
+var socket = require('socket.io');
+var opn = require('open');
 
 //App setup
 var app = express();
-var server = app.listen(4000,function(){
-	console.log('listening to requests on port 4000');
+var portNumber = 4000;
+var server = app.listen(portNumber,function(){
+	console.log(`listening to requests on port ${portNumber}`);
+	opn(`http://localhost:${portNumber}`);
 });
 
 app.use(express.static('public'));

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ravideshpande/Sevens-Card-Game#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "open": "^8.0.8",
     "socket.io": "^2.1.1"
   }
 }
